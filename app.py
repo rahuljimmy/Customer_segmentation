@@ -23,20 +23,23 @@ st.markdown("""
 @st.cache_resource
 def load_model_and_data():
     try:
-
         model = joblib.load("customer_segmentation_model.pkl")
 
         data = pd.read_csv("Mall_Customers.csv")
 
-        # Ensure column names are correct
+        # Remove hidden spaces in column names
         data.columns = data.columns.str.strip()
 
-        # Prepare features
-        X = data[['Annual Income (k$)', 'Spending Score (1-100)']]
+        # Convert to numeric (important for cloud)
+        data["Annual Income (k$)"] = pd.to_numeric(data["Annual Income (k$)"], errors="coerce")
+        data["Spending Score (1-100)"] = pd.to_numeric(data["Spending Score (1-100)"], errors="coerce")
 
-        # Predict clusters
-        data['Cluster'] = model.predict(X)
-        data['Cluster'] = data['Cluster'].astype(int)
+        # Drop any invalid rows
+        data = data.dropna()
+
+        X = data[["Annual Income (k$)", "Spending Score (1-100)"]]
+
+        data["Cluster"] = model.predict(X)
 
         return model, data
 
@@ -230,31 +233,28 @@ else:
 
     fig = go.Figure()
 
-    for cluster_id in cluster_info:
-
-        cluster_data = data[data["Cluster"] == cluster_id]
-
-        fig.add_trace(
-            go.Scatter(
-                x=cluster_data["Annual Income (k$)"],
-                y=cluster_data["Spending Score (1-100)"],
-                mode="markers",
-                name=cluster_info[cluster_id]["name"],
-                marker=dict(
-                    size=12,
-                    color=cluster_info[cluster_id]["color"],   
-                    opacity=1,                                 
-                    line=dict(width=1, color="black")          
-                )
-            )
+    fig.add_trace(
+        go.Scatter(
+            x=data["Annual Income (k$)"],
+            y=data["Spending Score (1-100)"],
+            mode="markers",
+            marker=dict(
+                size=12,
+                color=data["Cluster"],
+                colorscale="Viridis",
+                opacity=0.9,
+                line=dict(width=1, color="black")
+            ),
+            text=data["Cluster"],
+            hovertemplate="Income: %{x}<br>Spending: %{y}<br>Cluster: %{text}"
         )
+    )
 
     fig.update_layout(
+        template="plotly_white",
         height=520,
-        template="plotly_white",   
         xaxis_title="Annual Income (k$)",
-        yaxis_title="Spending Score",
-        legend_title="Customer Segment"
+        yaxis_title="Spending Score (1-100)"
     )
 
     st.plotly_chart(fig, use_container_width=True)
