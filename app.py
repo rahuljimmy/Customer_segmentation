@@ -232,29 +232,29 @@ else:
 
     for cluster_id in cluster_info:
 
-        cluster_data = data[data['Cluster'] == cluster_id]
+        cluster_data = data[data["Cluster"] == cluster_id]
 
-        fig.add_trace(go.Scatter(
-
-            x=cluster_data['Annual Income (k$)'],
-            y=cluster_data['Spending Score (1-100)'],
-
-            mode='markers',
-
-            marker=dict(
-                size=10,
-                color=cluster_info[cluster_id]["color"],
-                opacity=0.7
-            ),
-
-            name=cluster_info[cluster_id]["name"]
-
-        ))
+        fig.add_trace(
+            go.Scatter(
+                x=cluster_data["Annual Income (k$)"],
+                y=cluster_data["Spending Score (1-100)"],
+                mode="markers",
+                name=cluster_info[cluster_id]["name"],
+                marker=dict(
+                    size=12,
+                    color=cluster_info[cluster_id]["color"],   
+                    opacity=1,                                 
+                    line=dict(width=1, color="black")          
+                )
+            )
+        )
 
     fig.update_layout(
+        height=520,
+        template="plotly_white",   
         xaxis_title="Annual Income (k$)",
         yaxis_title="Spending Score",
-        height=500
+        legend_title="Customer Segment"
     )
 
     st.plotly_chart(fig, use_container_width=True)
