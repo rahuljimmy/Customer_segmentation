@@ -35,6 +35,7 @@ def load_model_and_data():
         
         # Predict clusters for all customers
         data['Cluster'] = model.predict(X)
+        data['Cluster'] = data['Cluster'].astype(int)
         
         return model, data
     except FileNotFoundError:
@@ -255,14 +256,13 @@ else:
         data, 
         x='Annual Income (k$)', 
         y='Spending Score (1-100)',
-        color='Cluster',
-        color_continuous_scale=['#2ecc71', '#e74c3c', '#f39c12', '#9b59b6', '#3498db'],
+        color=data['Cluster'].astype(str),
         title='Customer Segmentation Map',
         height=500
     )
     
-    fig.update_traces(marker=dict(size=10, opacity=0.7))
-    fig.update_layout(coloraxis_showscale=False)
+    fig.update_traces(marker=dict(size=12, opacity=0.8))
+    fig.update_layout(showlegend=True)
     
     st.plotly_chart(fig, use_container_width=True)
     
