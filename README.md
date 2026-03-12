@@ -113,10 +113,10 @@ The application also provides:
 ## 🛠️ Technologies Used
 
 - 🐍 Python  
-- 📊 Pandas  
+- 📈 Pandas  
 - 🔢 NumPy  
 - 🤖 Scikit-learn  
-- 📈 Plotly  
+- 📊 Matplotlib & Seaborn 
 - 🌐 Streamlit  
 - 💾 Joblib  
 
@@ -151,7 +151,7 @@ By identifying different customer segments, businesses can create **personalized
 
 **Rahul Jimmy**
 
-Aspiring **Data Scientist / Machine Learning Engineer**
+Aspiring **Data Scientist**
 
 🔗 Live App: (https://customer-segmentation--5.streamlit.app)  
 💻 GitHub: (https://github.com/rahuljimmy)
