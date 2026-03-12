@@ -62,19 +62,19 @@ The model groups customers into **5 distinct segments** based on their income an
 
 The model identifies the following customer groups:
 
-### 🔴 Target Customers  
-High Income and High Spending customers — **priority segment for premium marketing.**
-
-### 🟢 Standard Customers  
+### 🔴 Standard Customers  
 Moderate income and moderate spending behavior.
 
-### 🟠 Careless Customers  
+### 🔵 Target Customers  
+High Income and High Spending customers — **priority segment for premium marketing.**
+
+### 🟢 Careless Customers  
 Low income but high spending behavior.
 
 ### 🟣 Sensible Customers  
 High income but low spending behavior.
 
-### 🔵 Careful Customers  
+### 🟠 Careful Customers  
 Low income and low spending behavior.
 
 Each segment allows businesses to apply **different marketing strategies**.
@@ -153,5 +153,5 @@ By identifying different customer segments, businesses can create **personalized
 
 Aspiring **Data Scientist / Machine Learning Engineer**
 
-🔗 LinkedIn: (Add your LinkedIn link)  
-💻 GitHub: (Add your GitHub link)
+🔗 Live App: (https://customer-segmentation--5.streamlit.app)  
+💻 GitHub: (https://github.com/rahuljimmy)
