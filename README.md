@@ -6,11 +6,6 @@ This project focuses on segmenting customers into different groups based on thei
 
 Customer segmentation helps businesses understand different types of customers and design **targeted marketing strategies** for each group.
 
-The model groups customers based on:
-
-- 💰 **Annual Income**
-- 🛍️ **Spending Score**
-
 The trained model is deployed as an **interactive web application using Streamlit Community Cloud**, where users can input customer information and instantly identify the customer segment.
 
 ---
@@ -21,10 +16,10 @@ Businesses often have large numbers of customers with different spending pattern
 
 Customer segmentation helps businesses:
 
-- 🎯 Identify high-value customers
-- 📊 Understand spending behavior
-- 📢 Personalize marketing campaigns
-- 🤝 Improve customer retention and profitability
+-  Identify high-value customers
+-  Understand spending behavior
+-  Personalize marketing campaigns
+-  Improve customer retention and profitability
 
 ---
 
@@ -93,49 +88,56 @@ Users can:
 
 The application also provides:
 
-- 📊 Customer segment description
-- 📈 Recommended marketing strategy
-- 🧭 Customer cluster visualization
-- 📋 Segment comparison insights
+-  Customer segment description
+-  Recommended marketing strategy
+-  Customer cluster visualization
+-  Segment comparison insights
 
 ---
 
 ## ⭐ Key Features of the Application
 
-- 🔍 Interactive **customer segmentation prediction**
-- 📊 Visual **scatter plot of customer clusters**
-- 📈 Customer **segment insights and marketing strategies**
-- 📑 Comparison of all customer segments
-- ⚡ Real-time prediction using trained machine learning model
+-  Interactive **customer segmentation prediction**
+-  Visual **scatter plot of customer clusters**
+-  Customer **segment insights and marketing strategies**
+-  Comparison of all customer segments
+-  Real-time prediction using trained machine learning model
 
 ---
 
 ## 🛠️ Technologies Used
 
-- 🐍 Python  
-- 📈 Pandas  
-- 🔢 NumPy  
-- 🤖 Scikit-learn  
-- 📊 Matplotlib & Seaborn 
-- 🌐 Streamlit  
-- 💾 Joblib  
+-  Python  
+-  Pandas  
+-  NumPy  
+-  Scikit-learn  
+-  Matplotlib & Seaborn 
+-  Streamlit  
+-  Joblib  
 
 ---
 
 ## ⚙️ Model Information
 
-- 🤖 Algorithm: **K-Means Clustering**
-- 🔢 Number of Clusters: **5**
-- 📊 Features Used: **Annual Income, Spending Score**
+-  Algorithm: **K-Means Clustering**
+-  Number of Clusters: **5**
+-  Features Used: **Annual Income, Spending Score**
+
+---
+
+## 🌐 Deployment
+The final model is deployed using Streamlit Community Cloud.
+
+🔗 Live App: [https://customer-segmentation--5.streamlit.app]  
 
 ---
 
 ## 🚀 Future Improvements
 
-- ➕ Use additional features such as age, gender, and purchase history
-- 📊 Deploy the application with a larger real-world dataset
-- 🤖 Implement advanced clustering techniques such as **DBSCAN or Hierarchical Clustering**
-- 📈 Build a **business dashboard for marketing teams**
+-  Use additional features such as age, gender, and purchase history
+-  Deploy the application with a larger real-world dataset
+-  Implement advanced clustering techniques such as **DBSCAN or Hierarchical Clustering**
+-  Build a **business dashboard for marketing teams**
 
 ---
 
@@ -153,5 +155,4 @@ By identifying different customer segments, businesses can create **personalized
 
 Aspiring **Data Scientist**
 
-🔗 Live App: (https://customer-segmentation--5.streamlit.app)  
-💻 GitHub: (https://github.com/rahuljimmy)
+--- 
